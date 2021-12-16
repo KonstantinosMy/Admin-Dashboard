@@ -1,10 +1,7 @@
 import React from 'react'
 import { useRef, useState } from 'react';
 import logo from './logo.png';
-//PRIME
-import 'primereact/resources/themes/arya-blue/theme.css' ;  
-import 'primereact/resources/primereact.min.css'   ;                 
-import 'primeicons/primeicons.css'       ;        
+//PRIME       
 import { Password } from 'primereact/password';  
 import { Button } from 'primereact/button';
 import { Toast } from 'primereact/toast';   
