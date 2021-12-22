@@ -1,25 +1,42 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import 'primereact/resources/themes/arya-blue/theme.css' ;  
+//tab Menu
+import { TabMenu } from 'primereact/tabmenu';
+import { Button } from 'primereact/button';
 //for data view
 import { DataTable } from 'primereact/datatable';
 import { Column } from 'primereact/column';
+import { ProcessService } from "./ProcessService";
 
 function Dashboard() {
-  const [data, setData] = React.useState([]);
-  React.useEffect(() => {
-    const fetchLocation = async () => {
-      await fetch("https://api.jsonbin.io/b/61bb0343cc8e023101370e56")
-        .then((res) => res.json())
-        .then((data) => {
-          setData(data);
-          console.log(data);
-        });
-    };
-    fetchLocation();
-  }, []);
+  const [processes, setProcceses] = useState([]);
+  const processService = new ProcessService();
 
+  useEffect(() => {
+    processService.getProcesses().then(processes => setProcceses(processes));
+    //eslint-disable-next-line
+  },[]);
+  console.log(processes);
+  if(!processes) return <div>Loading...</div>
+  return (
+
+    <div style={{ width: 600 ,height: 100, margin: 20}}>
+    <DataTable value={processes} responsiveLayout="scroll">
+      <Column field='Image_Name' header='Image Name' />
+      <Column field='pid' header='PID' />
+      <Column field='Session_Name' header='Sesson Name' />
+      <Column field='Memory_Usage' header='Memory Usage' />
+    </DataTable>
+    </div>
+  );
+}
+
+/*
   if(!data) return <div>Loading...</div>
   return (
+
     <div style={{ width: 1000 }}>
+      
       <DataTable value={null}>
         <Column field='imgName' header='Image Name' />
         <Column field='pid' header='PID' />
@@ -27,7 +44,8 @@ function Dashboard() {
         <Column field='memusage' header='Memory Usage' />
       </DataTable>
 	  </div>
+    
   );
 }
-
+*/
 export default Dashboard; 
