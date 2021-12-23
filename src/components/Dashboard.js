@@ -1,12 +1,9 @@
 import React, { useEffect, useState } from "react";
-import 'primereact/resources/themes/arya-blue/theme.css' ;  
-//tab Menu
-import { TabMenu } from 'primereact/tabmenu';
-import { Button } from 'primereact/button';
 //for data view
 import { DataTable } from 'primereact/datatable';
 import { Column } from 'primereact/column';
 import { ProcessService } from "./ProcessService";
+import {MenuBarMain} from './MenuBarMain';
 
 function Dashboard() {
   const [processes, setProcceses] = useState([]);
@@ -17,14 +14,16 @@ function Dashboard() {
     //eslint-disable-next-line
   },[]);
   console.log(processes);
+
   if(!processes) return <div>Loading...</div>
   return (
-
-    <div style={{ width: 600 ,height: 100, margin: 20}}>
-    <DataTable value={processes} responsiveLayout="scroll">
+    
+    <div>
+    <MenuBarMain/>
+    <DataTable value={processes} responsiveLayout="scroll" >
       <Column field='Image_Name' header='Image Name' />
       <Column field='pid' header='PID' />
-      <Column field='Session_Name' header='Sesson Name' />
+      <Column field='Session_Name' header='Session Name' />
       <Column field='Memory_Usage' header='Memory Usage' />
     </DataTable>
     </div>

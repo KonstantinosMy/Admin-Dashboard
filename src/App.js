@@ -3,7 +3,23 @@ import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import Dashboard from './components/Dashboard';
 import Login from './components/Login';
 import ErrorPage from './components/ErrorPage';
+import {MenuBarMain} from './components/MenuBarMain';
 
+
+function App(){
+
+  
+  return (
+  <Router>
+    <Routes>
+      <Route path="/" element={<Login />} />
+      <Route path="/MenuBarMain" element={<MenuBarMain/>} />
+      <Route path="/Dashboard" element={<Dashboard />} />
+      <Route path="*" element={<ErrorPage />} />
+    </Routes>
+  </Router>
+  );
+}
 
 /*
 //NodeJS web server
@@ -21,15 +37,4 @@ server.listen(1234, function(){
   console.log('Listening on port 1234');
 })
 */
-function App(){
-  return (
-  <Router>
-    <Routes>
-      <Route path="/" element={<Login />} />
-      <Route path="/Dashboard" element={<Dashboard />} />
-      <Route path="*" element={<ErrorPage />} />
-    </Routes>
-  </Router>
-  );
-}
 export default App;
