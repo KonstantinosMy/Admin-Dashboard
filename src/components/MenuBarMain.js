@@ -9,14 +9,16 @@ import { InputText } from 'primereact/inputtext';
 //import App from '../App';
 //import {useNavigate} from 'react-router-dom';
 
-function App(){
-    //let navigate = useNavigate();
-}
 export class MenuBarMain extends Component {
 
     constructor(props) {
         super(props);
         this.items = [
+            {
+                label: 'Main',
+                icon: 'pi pi-home',
+                url: '/Dashboard'
+            },
             {
                 label: 'PC',
                 icon: 'pi pi-fw pi-desktop',
@@ -24,22 +26,24 @@ export class MenuBarMain extends Component {
                     {
                         label: 'Active Connections',
                         icon: 'pi pi-fw pi-server',
-
+                        url: '/NetworkInfo'
                     },
                     {
                         label: 'Processes',
                         icon: 'pi pi-fw pi-cog',
+                        url: '/ProcessesInfo'
                     },
                     {
                         label: 'System',
-                        icon: 'pi pi-fw pi-tablet'
+                        icon: 'pi pi-fw pi-tablet',
+                        url: '/SystemInfo'
                     }
                 ]
             },
             {
                 label: 'Users',
-                icon: 'pi pi-fw pi-user'
-                
+                icon: 'pi pi-fw pi-user',
+                url: '/UsersInfo'
             },
             {
                 separator:true
@@ -47,9 +51,7 @@ export class MenuBarMain extends Component {
             {
                 label: 'Disconnect',
                 icon: 'pi pi-fw pi-sign-out',
-                command: (event) => {
-                    //navigate("App");
-                }
+                url: '/'
             }
         ];
     }

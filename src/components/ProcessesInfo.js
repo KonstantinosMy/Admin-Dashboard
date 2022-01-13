@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from "react";
+//for data view
+import { DataTable } from 'primereact/datatable';
+import { Column } from 'primereact/column';
 import { ProcessService } from "./ProcessService";
 import {MenuBarMain} from './MenuBarMain';
-import { PieChart } from "./PieChart";
 
-function Dashboard() {
+function ProcessesInfo() {
   const [processes, setProcceses] = useState([]);
   const processService = new ProcessService();
 
@@ -18,7 +20,12 @@ function Dashboard() {
     
     <div>
     <MenuBarMain/>
-    <PieChart/>
+    <DataTable value={processes} responsiveLayout="scroll" >
+      <Column field='Image_Name' header='Image Name' />
+      <Column field='pid' header='PID' />
+      <Column field='Session_Name' header='Session Name' />
+      <Column field='Memory_Usage' header='Memory Usage' />
+    </DataTable>
     </div>
   );
 }
@@ -40,4 +47,4 @@ function Dashboard() {
   );
 }
 */
-export default Dashboard; 
+export default ProcessesInfo; 

@@ -1,10 +1,13 @@
 import './App.css';
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
-import Dashboard from './components/Dashboard';
+import ProcessesInfo from './components/ProcessesInfo';
 import Login from './components/Login';
 import ErrorPage from './components/ErrorPage';
 import {MenuBarMain} from './components/MenuBarMain';
-
+import Dashboard from './components/Dashboard';
+import SystemInfo from './components/SystemInfo';
+import NetworkInfo from './components/NetworkInfo';
+import UsersInfo from './components/UsersInfo';
 
 function App(){
 
@@ -13,9 +16,13 @@ function App(){
   <Router>
     <Routes>
       <Route path="/" element={<Login />} />
+      <Route path="/Dashboard" element={<Dashboard/>} />
       <Route path="/MenuBarMain" element={<MenuBarMain/>} />
-      <Route path="/Dashboard" element={<Dashboard />} />
+      <Route path="/ProcessesInfo" element={<ProcessesInfo />} />
+      <Route path="/SystemInfo" element={<SystemInfo />} />
       <Route path="*" element={<ErrorPage />} />
+      <Route path="/NetworkInfo" element = {<NetworkInfo />} />
+      <Route path="/UsersInfo" element = {<UsersInfo />} />
     </Routes>
   </Router>
   );
