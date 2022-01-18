@@ -15,19 +15,9 @@ export class MenuBarMain extends Component {
         super(props);
         this.items = [
             {
-                label: 'Main',
-                icon: 'pi pi-home',
-                url: '/Dashboard'
-            },
-            {
                 label: 'PC',
                 icon: 'pi pi-fw pi-desktop',
                 items: [
-                    {
-                        label: 'Active Connections',
-                        icon: 'pi pi-fw pi-server',
-                        url: '/NetworkInfo'
-                    },
                     {
                         label: 'Processes',
                         icon: 'pi pi-fw pi-cog',
@@ -37,21 +27,21 @@ export class MenuBarMain extends Component {
                         label: 'System',
                         icon: 'pi pi-fw pi-tablet',
                         url: '/SystemInfo'
+                    },
+                    {
+                        label: 'Users',
+                        icon: 'pi pi-fw pi-user',
+                        url: '/UsersInfo'
                     }
                 ]
             },
             {
-                label: 'Users',
-                icon: 'pi pi-fw pi-user',
-                url: '/UsersInfo'
+                label: 'Active Connections',
+                icon: 'pi pi-fw pi-server',
+                url: '/NetworkInfo'
             },
             {
                 separator:true
-            },
-            {
-                label: 'Disconnect',
-                icon: 'pi pi-fw pi-sign-out',
-                url: '/'
             }
         ];
     }

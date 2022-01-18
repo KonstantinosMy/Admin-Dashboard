@@ -4,8 +4,8 @@ import { DataTable } from 'primereact/datatable';
 import { Column } from 'primereact/column';
 import { ActiveConnections } from "./ActiveConnections";
 import {MenuBarMain} from './MenuBarMain';
-
-function Dashboard2() {
+import {MenuBar} from './MenuBar';
+function NetworkInfo() {
   const [connections, setConnections] = useState([]);
   const systemConnections = new ActiveConnections();
 
@@ -19,6 +19,7 @@ function Dashboard2() {
   return (
     
     <div>
+    <MenuBar/>
     <MenuBarMain/>
     <DataTable value={connections} responsiveLayout="scroll" >
       <Column field='Proto' header='Proto' />
@@ -29,4 +30,4 @@ function Dashboard2() {
     </div>
   );
 }
-export default Dashboard2; 
+export default NetworkInfo; 

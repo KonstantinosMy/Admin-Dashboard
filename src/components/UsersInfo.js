@@ -4,6 +4,7 @@ import { DataTable } from 'primereact/datatable';
 import { Column } from 'primereact/column';
 import { UsersList } from "./UsersList";
 import {MenuBarMain} from './MenuBarMain';
+import {MenuBar} from './MenuBar';
 
 function UsersInfo() {
   const [users, setUsers] = useState([]);
@@ -19,6 +20,7 @@ function UsersInfo() {
   return (
     
     <div>
+    <MenuBar/>
     <MenuBarMain/>
     <DataTable value={users} responsiveLayout="scroll" >
       <Column field='Users' header='Users1' />

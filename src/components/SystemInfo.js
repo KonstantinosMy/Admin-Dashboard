@@ -4,6 +4,7 @@ import { DataTable } from 'primereact/datatable';
 import { Column } from 'primereact/column';
 import { SystemProperties } from "./SystemProperties";
 import {MenuBarMain} from './MenuBarMain';
+import {MenuBar} from './MenuBar';
 
 function SystemInfo() {
   const [properties, setProperties] = useState([]);
@@ -19,6 +20,7 @@ function SystemInfo() {
   return (
     
     <div>
+    <MenuBar/>
     <MenuBarMain/>
     <DataTable value={properties} responsiveLayout="scroll" >
       <Column field='Os_Name' header='OS Name' />

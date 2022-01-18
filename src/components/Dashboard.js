@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { ProcessService } from "./ProcessService";
 import {MenuBarMain} from './MenuBarMain';
-import { PieChart } from "./PieChart";
+import {MenuBar} from './MenuBar';
+import {AllComputers} from './AllComputers';
 
 function Dashboard() {
   const [processes, setProcceses] = useState([]);
@@ -17,8 +18,9 @@ function Dashboard() {
   return (
     
     <div>
+    <MenuBar/>
     <MenuBarMain/>
-    <PieChart/>
+    <AllComputers/>
     </div>
   );
 }

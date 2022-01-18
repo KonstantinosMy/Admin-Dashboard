@@ -4,7 +4,7 @@ import { DataTable } from 'primereact/datatable';
 import { Column } from 'primereact/column';
 import { ProcessService } from "./ProcessService";
 import {MenuBarMain} from './MenuBarMain';
-
+import {MenuBar} from './MenuBar'
 function ProcessesInfo() {
   const [processes, setProcceses] = useState([]);
   const processService = new ProcessService();
@@ -19,6 +19,7 @@ function ProcessesInfo() {
   return (
     
     <div>
+    <MenuBar/>
     <MenuBarMain/>
     <DataTable value={processes} responsiveLayout="scroll" >
       <Column field='Image_Name' header='Image Name' />
