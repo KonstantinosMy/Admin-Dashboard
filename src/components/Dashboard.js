@@ -3,7 +3,6 @@ import { ProcessService } from "./ProcessService";
 import {MenuBarMain} from './MenuBarMain';
 import {MenuBar} from './MenuBar';
 import {AllComputers} from './AllComputers';
-
 function Dashboard() {
   const [processes, setProcceses] = useState([]);
   const processService = new ProcessService();

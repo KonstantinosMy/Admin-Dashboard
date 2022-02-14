@@ -6,6 +6,7 @@ export class ActiveConnections {
         .then(res => res.json())
         .then(d => d.connections);
     }
+
 }
 /*
 export class ActiveConnections {
