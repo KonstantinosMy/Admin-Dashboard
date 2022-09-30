@@ -2,7 +2,8 @@
 export class SystemProperties {
 
     getSystem(){
-        return fetch('http://192.168.66.83:8093/systeminfo')
+        //add api endpoint here
+        return fetch('')
         .then(res => res.json())
         .then(d => d.properties);
     }
@@ -13,7 +14,7 @@ export class SystemProperties {
         const requestOptions = {
             method: 'POST'
         };
-        return fetch('http://192.168.66.83:8093/systeminfo', requestOptions)
+        return fetch('', requestOptions)
         .then(response => response.json())
         .then(d => d.properties)
     }

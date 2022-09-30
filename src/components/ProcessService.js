@@ -2,7 +2,8 @@
 export class ProcessService {
 
     getProcesses(){
-        return fetch('http://192.168.66.83:8093/networkScan')
+        //Add api endpoint here
+        return fetch('')
         .then(res => res.json())
         .then(d => d.processes);
     }
@@ -15,7 +16,7 @@ export class ProcessService {
         const requestOptions = {
             method: 'POST'
         };
-        return fetch('http://192.168.66.83:8093/networkScan', requestOptions)
+        return fetch('', requestOptions)
         .then(response => response.json())
         .then(d => d.processes)
     }

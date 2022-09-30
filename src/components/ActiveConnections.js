@@ -2,7 +2,8 @@
 export class ActiveConnections {
 
     getConnections(){
-        return fetch('http://192.168.66.83:8093/networkIP')
+        //Add api endpoint here
+        return fetch('')
         .then(res => res.json())
         .then(d => d.connections);
     }
@@ -14,7 +15,7 @@ export class ActiveConnections {
         const requestOptions = {
             method: 'POST'
         };
-        return fetch('http://192.168.66.83:8093/networkIP', requestOptions)
+        return fetch('', requestOptions)
         .then(response => response.json())
         .then(data => data.connections)
     }
